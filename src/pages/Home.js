@@ -52,8 +52,8 @@ function Hero() {
 
         {/* IMAGE (LANDSCAPE FIXED) */}
         <motion.img
-          src="/your-image.jpg"
-          alt="Adu"
+          src={process.env.PUBLIC_URL + "/your-image.jpg"} 
+          alt="profile"
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.9, duration: 0.8 }}
@@ -126,84 +126,91 @@ function About() {
 }
 
 /* -------- PROJECTS -------- */
+/* -------- PROJECTS -------- */
 function Projects() {
-  const projectList = [
-    {
-      title: "Salary-Prediction Model",
-      desc: "Salary prediction model, predicts the salary based on your experience and skills along with a small summery of you and the candidates compared.",
-      github: "#"
-    },
-    {
-      title: "Meme-Virality",
-      desc: "This model predicts the virality of a meme based only on its visual features.",
-      github: "#"
-    },
-    {
-      title: "Bambique",
-      desc: "A research based on sustainable fabric with is technically equipped.",
-      github: "#"
-    },
-  ];
-
-  return (
-    <div
-      id="projects"
-      className="section"
-      style={{
-        flexDirection: "column",
-        alignItems: "flex-start",
-        justifyContent: "flex-start",
-      }}
-    >
-      <motion.h1
-        initial={{ opacity: 0, y: 60 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
-      >
-        Projects
-      </motion.h1>
-
+    const projectList = [
+      {
+        title: "Salary-Prediction Model",
+        desc: "Predicts developer salaries based on experience and skills, along with a summary comparing similar candidates.",
+        github: "https://github.com/ADlio1408/Personalized_Salary_prediction"
+      },
+      {
+        title: "Meme-Virality",
+        desc: "Predicts the virality of a meme using visual features and behavioral patterns.",
+        github: "https://github.com/ADlio1408/Meme-Virality"
+      },
+      {
+        title: "Bambique",
+        desc: "A research-based project exploring sustainable fabric integrated with technology.",
+        github: "https://github.com/ADlio1408/Bambique"
+      },
+    ];
+  
+    return (
       <div
+        id="projects"
+        className="section"
         style={{
-          display: "flex",
           flexDirection: "column",
-          gap: "20px",
-          marginTop: "20px",
-          width: "100%",
-          maxWidth: "500px",
+          alignItems: "flex-start",
+          justifyContent: "flex-start",
         }}
       >
-        {projectList.map((proj, index) => (
-          <motion.div
-            key={index}
-            className="card"
-            initial={{ opacity: 0, y: 60 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: index * 0.15 }}
-            viewport={{ once: true }}
-            whileHover={{
-              scale: 1.02,
-              y: -5,
-              transition: { type: "spring", stiffness: 300, damping: 20 },
-            }}
-          >
-            <h3 style={{ color: "#d9a5a4" }}>{proj.title}</h3>
-            <p style={{ fontSize: "14px", marginTop: "10px" }}>
-              {proj.desc}
-            </p>
-
-            <div style={{ marginTop: "15px", display: "flex", gap: "10px" }}>
-              <a href={proj.github} target="_blank" rel="noreferrer">
-                <button className="btn-outline">GitHub</button>
-              </a>
-            </div>
-          </motion.div>
-        ))}
+        <motion.h1
+          initial={{ opacity: 0, y: 60 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
+          Projects
+        </motion.h1>
+  
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            gap: "20px",
+            marginTop: "20px",
+            width: "100%",
+            maxWidth: "500px",
+          }}
+        >
+          {projectList.map((proj, index) => (
+            <motion.div
+              key={index}
+              className="card"
+              initial={{ opacity: 0, y: 60 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.15 }}
+              viewport={{ once: true }}
+              whileHover={{
+                scale: 1.02,
+                y: -5,
+                transition: { type: "spring", stiffness: 300, damping: 20 },
+              }}
+            >
+              <h3 style={{ color: "#d9a5a4" }}>{proj.title}</h3>
+  
+              <p style={{ fontSize: "14px", marginTop: "10px" }}>
+                {proj.desc}
+              </p>
+  
+              <div style={{ marginTop: "15px", display: "flex", gap: "10px" }}>
+                <a 
+                  href={proj.github} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                >
+                  <button className="btn-outline">GitHub ↗</button>
+                </a>
+              </div>
+  
+            </motion.div>
+          ))}
+        </div>
       </div>
-    </div>
-  );
-}
+    );
+  }
 
 /* -------- SKILLS -------- */
 function Skills() {
