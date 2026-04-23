@@ -1,0 +1,157 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* THEME */
+  :root {
+    --bg: #f5efe9;            /* soft cream */
+    --surface: #ffffffcc;     /* glass white */
+    --border: rgba(0, 0, 0, 0.08);
+  
+    --primary: #e6b8b7;       /* pink */
+    --secondary: #d8c7c5;     /* beige */
+    --accent: #5cc1c0;        /* subtle teal */
+  
+    --text: #1a1a1a;
+    --secondary-text: #555555;
+  }
+  
+  /* GLOBAL */
+  body {
+    font-family: "Poppins", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+  
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  
+  }
+  
+  /* LINKS */
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  /* NAVBAR */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  
+    padding: 20px 60px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+  
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--border);
+  }
+  
+  /* LOGO GRADIENT */
+  .logo {
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: 2px;
+  
+    background: linear-gradient(90deg, #e6b8b7, #d8c7c5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .nav-links a {
+    margin-left: 25px;
+    font-size: 14px;
+    transition: 0.3s;
+  }
+  
+  .nav-links a:hover {
+    color: var(--primary);
+  }
+  
+  /* SECTION */
+  .section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;        /* 🔥 stack content vertically */
+  
+    align-items: flex-start;       /* 🔥 align left */
+    justify-content: flex-start;   /* 🔥 push to top */
+  
+    padding: 120px 80px 60px 80px;
+  
+    position: relative;
+    z-index: 1;                    /* 🔥 IMPORTANT for dots */
+  }
+  
+  /* TEXT */
+  h1 {
+    font-size: 64px;
+    line-height: 1.2;
+  }
+  
+  p {
+    font-size: 18px;
+    color: var(--secondary-text);
+    margin-top: 20px;
+  }
+  
+  /* BUTTON */
+  .btn {
+    margin-top: 30px;
+    padding: 14px 28px;
+  
+    border: none;
+    border-radius: 10px;
+  
+    background: linear-gradient(135deg, #e6b8b7, #d8c7c5);
+    color: #000;
+  
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .btn:hover {
+    transform: translateY(-3px);
+    opacity: 0.9;
+  }
+  
+  /* PROJECT CARDS */
+  .card {
+    padding: 24px;
+    border-radius: 16px;
+  
+    background: var(--surface);
+    backdrop-filter: blur(12px);
+  
+    border: 1px solid var(--border);
+  
+    box-shadow:
+      0 10px 30px rgba(0, 0, 0, 0.05),
+      0 2px 8px rgba(0, 0, 0, 0.03);
+  
+    transition: 0.3s;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow:
+      0 20px 40px rgba(0, 0, 0, 0.08),
+      0 5px 12px rgba(0, 0, 0, 0.05);
+  }
+  
+  /* FLOATING GLOW */
+  .floating {
+    position: absolute;
+    pointer-events: none;
+  }
+  
+  /* SMOOTH SCROLL */
+  html {
+    scroll-behavior: smooth;
+  }
